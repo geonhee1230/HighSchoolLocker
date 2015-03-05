@@ -63,20 +63,29 @@ public class CombinationLock {
 		dial = 0;
 	}
 
-	public void turnLeft(int ticks) {
+	public void turnRight(int ticks) {
 
-		dial -= ticks;
+		
+		dial = (40 - (ticks-dial)) % 40;
 	}
 
-	public void turnRight(int ticks) {
-		dial += ticks;
+	public void turnLeft(int ticks) {
+		dial = ((ticks + dial) + 40) % 40;
 	}
 
 	public boolean openLock(int a, int b, int c) {
-
-		if (a == combo1 && b == combo2 && c == combo3)
-			return true;
-		else
+		turnLeft(a);
+		if (dial == combo1) {
+			turnRight(b);
+			if (dial == combo2) {
+				turnLeft(c);
+				if (dial == combo3)
+					return true;
+				else
+					return false;
+			} else
+				return false;
+		} else
 			return false;
 	}
 

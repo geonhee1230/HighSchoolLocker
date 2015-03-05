@@ -73,13 +73,14 @@ public class Locker {
 	}
 
 	public void openLocker() {
-		System.out.println("Hi, " + studentname + ".");
-		System.out.println("Enter the first combination");
+		System.out.println("Hi, " + studentname + ".\n");
+		System.out.println("Please turn dial to left, right, and then left to open the locker.\n");
+		System.out.println("How many ticks to the left?");
 		Scanner keyboard = new Scanner(System.in);
 		int a = keyboard.nextInt();
-		System.out.println("Enter the second combination");
+		System.out.println("How many ticks to the right?");
 		int b = keyboard.nextInt();
-		System.out.println("Enter the third combination");
+		System.out.println("How many ticks to the left?");
 		int c = keyboard.nextInt();
 
 		if (lock.openLock(a, b, c) == true) {

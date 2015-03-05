@@ -7,6 +7,7 @@ public class HighSchoolLockerDriver {
 	CombinationLock lockofdonald = new CombinationLock(35, 16, 27);
 	Locker  Donald = new Locker(275,0,"Donald Duck",lockofdonald);
 	
+	
 	Mickey.openLocker();
 	
 	Mickey.putBookInLocker();
@@ -20,7 +21,6 @@ public class HighSchoolLockerDriver {
 	System.out.println();
 	System.out.println();
 	System.out.println(Donald);
-	
-	
+
 	}
 }
